@@ -41,4 +41,11 @@ pipeline {
       }
     }
   }
+      post {
+        success {
+            script {
+                slackSend(channel: "jenkins", message: "pipeline-slack passed successfully")
+            }
+        }
+    }
 }
